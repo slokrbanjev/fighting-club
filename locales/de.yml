@@ -11,6 +11,7 @@ de:
   desc_classes: "Der Fighting Club bietet Kurse in vier Disziplinen an: Boxen, Kickboxen, Judo und Brazilian Jiu Jitsu. Mitglieder können nach Absprache mit den jeweiligen Trainern an allen Kursen teilnehmen."
   subsection_boxing: "Amateurboxen"
   subsection_kickboxing: "Kickboxen"
+  subsection_kick_thai: "Muay Thai"
   subsection_judo: "Judo"
   subsection_brazilianjiujitsu: "Brazilian Jiu Jitsu"
   subsection_securekids: "Sicherheitstraining für Kinder und Jugendliche"
@@ -20,6 +21,7 @@ de:
   subdesc_judo: "Begründet durch Jigoro Kano, ist Judo ein Weg zur Leibesertüchtigung und auch eine Philosophie zur Persönlichkeitsentwicklung. Ziel ist es diese Haltung in sich zu tragen und sie bewusst in jeder Bewegung zum Ausdruck zu bringen. Es werden das traditionelle Judo, als auch die heute dominierenden Wettkampftechniken gelernt, sowie Gürtelprüfungen abgehalten."
   subdesc_brazilianjiujitsu: "Das Brasilianische Jiu Jitsu oder auch Gracie Jiu Jitsu ist ein Kampfsport- und Selbstverteidigungssystem, das den Schwerpunkt auf Bodenkampf legt, wobei im Training zusätzlich Wurftechniken aus dem Stand unterrichtet werden. Seit den Neunziger Jahren gilt das BJJ als das prägende im Nahkampf eingesetzte System im MMA und UFC- Wettkampfgeschehen."
   subdesc_securekids: "Selbstbehauptung, Stärkung der Sozialkompetenzen und Selbstverteidigungstechniken sollen erlernt werden. Gewaltprävention, Zivilcourage fördern, Verhinderung von Eskalationen, Warn- und Körpersignale erkennen. Die Stärkung der Persönlichkeit, unter Vermeidung von Aggression und Gewalt in Vermittlung von Inhalten die ein Zusammenleben wertvoll machen."
+  subdesc_kick_thai: "Muay Thai ist Thailands Nationalsport und eine der ältesten Kampfsportarten der Welt, bei der neben Bein- und Boxtechniken auch Knie und Ellenbogen zum Einsatz kommen. Es ist außerdem erlaubt, im Clinch zu bleiben, dabei Kniestöße anzubringen und/oder den Gegner zu Boden zu bringen."
 
   button_signup: "Anmelden"
   signupmail_boxing: "fightingclub2006@gmail.com"
@@ -27,6 +29,8 @@ de:
   signupmail_judo: "tomasiheinrich@libero.it"
   signupmail_bjj: "patrickb31@outlook.it"
   signupmail_securekids: "lukasbernhard@rolmail.net"
+  signupmail_kick_thai: "fightingclub2006@gmail.com"
+
 
 
   desc_trainers: "Unsere Trainer sind Meister in ihren Disziplinen."
@@ -57,15 +61,16 @@ de:
   schedule_kickboxing: "Kickboxen"
   schedule_judo_adults: "Judo 'Adults'"
   schedule_judo_kids: "Judo 'Kids'"
-  schedule_bjj: "BJJ Advanced"
+  schedule_bjj: "BJJ/Grappling Advanced"
   schedule_bjj_kids: "B.J.J. 'Kids'"
   schedule_bjj_juniors: "B.J.J. 'Kids & Juniors'"
-  schedule_bjj_basic: "BJJ Basic"
+  schedule_bjj_basic: "BJJ Junior/Adult"
   schedule_taekwondo: "Taekwondo"
   schedule_taekwondo_4all: "Taekwondo '4 all'"
   schedule_taekwondo_kids: "Taekwondo 'Kids'"
   schedule_kick_thai: "Muay Thai"
   schedule_self_defence: "Selbstverteidigung für alle"
+  schedule_self_defence_kids: "Safetytraining Kids"
 
   section_pictures: "Bilder"
   desc_pictures: "Schau dir unsere Bildergalerie an. Hier siehst du unsere neue Trainingshalle und Aufnahmen von verschiedenen Kursen."
