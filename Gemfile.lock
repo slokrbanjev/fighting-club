@@ -131,6 +131,7 @@ GEM
       sass (~> 3.3)
 
 PLATFORMS
+  universal-darwin-22
   x86_64-linux
 
 DEPENDENCIES
