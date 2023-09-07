@@ -1,0 +1,113 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title><%= current_page.data.title || "Fighting Club Meran/o" %></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag "main" %>
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker|Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <%= favicon_tag 'assets/img/favicon.ico' %>
+  </head>
+
+  <body class="<%= page_classes %>">
+    <div class="topbar">
+      <div class="container">
+        <ul class="language-menu">
+          <li><%= nav_link "Deutsch", "/" %></li>
+          <li><%= nav_link "Italiano", "/it/" %></li>
+          <li><%= nav_link "English", "/en/" %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <header>
+        <nav class="main-menu">
+          <ul>
+            <li><%= nav_link t(:section_classes), "index.html#classes", :class => 'anchor-link' %></li>
+            <li><%= nav_link t(:section_trainers), "index.html#trainers", :class => 'anchor-link' %></li>
+            <li><%= nav_link t(:section_schedule), "index.html#schedule", :class => 'anchor-link' %></li>
+            <li><%= nav_link t(:section_join), "index.html#join", :class => 'anchor-link' %></li>
+            <li><%= nav_link t(:section_contact), "index.html#contact", :class => 'anchor-link' %></li>
+            <li class="mobile-only">
+              <a href="#!" class="language"><%= t(:language_switch) %></a>
+              <ul class="language-menu">
+                <li><%= nav_link "Deutsch", "/" %></li>
+                <li><%= nav_link "Italiano", "/it/" %></li>
+                <li><%= nav_link "English", "/en/" %></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <h1 class="title visuallyhidden">Fighting Club Meran/o</h1>
+        <a class="main-logo" id="main-logo" href="index.html#topbar">
+          <img src="../assets/img/logo-v2.png" />
+        </a>
+      </header>
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="overlay">
+        <div class="container">
+          <section class="content_wrapper" id="contact">
+            <div class="section-header contact-info">
+              <div class="zen-box two-col-1">
+                <h2><%= t(:section_contact) %></h2>
+              </div>
+            </div>
+            <div class="section-header contact-info">
+              <div class="zen-box two-col-1">
+                <p class="title-descriptions">
+                  <%= t(:desc_contact) %>
+                </p>
+                <a class="contact-email" href="mailto:fightingclub2006@gmail.com">fightingclub2006@gmail.com</a>
+                <%# <p class="contact-phone">+39 338 2445844</p> %>
+                <a class="contact-fb" href="https://www.facebook.com/FightingClubMerano" target="_blank"><img src="../assets/img/fb-icon.svg" alt="Logo Facebook"><%= t(:fb_follow) %></a>
+                <div class="contact-address">
+                  Fighting Club Meran/o<br>
+                  <%= t(:desc_contactaddress) %><br>
+                  <br>
+                  Cassa Rurale Novella e Alta Anaunia<br>
+                  IBAN: IT68Q0820058490000010000293
+                </div>
+              </div>
+              <div class="zen-box two-col-2">
+                <h3><%= t(:subsection_partners) %></h3>
+                <p class="title-descriptions">
+                  <%= t(:subdesc_partners) %>
+                </p>
+                <a class="partner-link" target="_blank" href="https://booncon.com"><img src="../assets/img/logo_bc-inverted.svg" alt="Logo booncon" /></a>
+                <a class="partner-link" target="_blank" href="http://www.cafeamtore.com"><img src="../assets/img/cafe_tore-logo.svg" alt="Logo Cafe am Tore" /></a>
+                <a class="partner-link" target="_blank" href="https://www.protactics.de"><img src="../assets/img/logo_ProTactics.svg" alt="Logo I.P.F." /></a>
+                <a class="partner-link" target="_blank" href="http://torggler.com"><img src="../assets/img/logo_torggler.svg" alt="Logo Torggler" /></a>
+              </div>
+            </div>
+          </section>
+          <section class="content_wrapper">
+            <div class="zen-box credit-line"><span class="copy-link">© 2019 FightingClub Meran/o | <%= nav_link t(:section_credits), "credits.html" %></span> | Crafted by <a href="https://booncon.com" target="_blank" class="credit-link">booncon</a></div>
+          </section>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+  <%= javascript_include_tag "main" %>
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-47313308-1', 'fightingclub.it');
+    ga('send', 'pageview');
+
+  </script>
+</html>

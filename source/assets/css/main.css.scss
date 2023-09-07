@@ -1,0 +1,763 @@
+@import 'normalize';
+// @import 'compass';
+@import 'helper-classes';
+@import 'zen-grids';
+@import 'slippry';
+@import 'meanmenu';
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+// Zen Grids general parameters
+$zen-columns: 12;
+$zen-gutters: 36px;
+$zen-auto-include-grid-item-base: false;
+
+$color-green: #aabf46;
+$color_black: #000;
+$color-grey: #333;
+$color_white: #fff;
+$color-font: #222;
+$color-titles: darken($color-green, 42%);
+
+// Table Colours
+$color-kickboxing: #628445;
+$color-boxing: $color-green;
+$color-juniorboxing: darken($color-boxing, 10%);
+$color-jj: #c6ba48;
+$color-jjkids: darken($color-jj, 10%);
+$color-judo: #6a6747;
+$color-selfdef: #d1d1d1;
+$color-taekwondo-kids: #464216;
+$color-taekwondo: lighten($color-taekwondo-kids, 10%);
+$color-thai: $color-taekwondo-kids;
+
+$box-sizing-polyfill-path: "boxsizing.htc";
+
+// Lets add some generic styles to our section blocks in the main part of our website content.
+
+// Typical div parameters for 3 & 4 column content.
+// Zen Grids layout parameters for 3 & 4 column divs and spans.
+.zen-box {
+	@include zen-grid-item-base();
+
+	img {
+		width: 100%;
+	}
+
+	// For two column layouts
+	&.two-col-1 {
+		@include zen-grid-item(6, 1);
+	}
+	&.two-col-2 {
+		@include zen-grid-item(6, 7);
+	}
+	@media only screen and (max-width: 600px) {
+		&.two-col-1 {
+			@include zen-grid-item(12, 1);
+			@include zen-new-row();
+		}
+		&.two-col-2 {
+			@include zen-grid-item(12, 1);
+			@include zen-new-row();
+		}
+	}
+
+	// For three column layouts
+	&.three-col-1 {
+		@include zen-grid-item(4, 1);
+		@include zen-new-row();
+	}
+	&.three-col-2 {
+		@include zen-grid-item(4, 5);
+	}
+	&.three-col-3 {
+		@include zen-grid-item(4, 9);
+	}
+	@media only screen and (max-width: 600px) {
+		&.three-col-1 {
+			@include zen-grid-item(12, 1);
+			@include zen-new-row();
+		}
+		&.three-col-2 {
+			@include zen-grid-item(12, 1);
+			@include zen-new-row();
+		}
+		&.three-col-3 {
+			@include zen-grid-item(12, 1);
+			@include zen-new-row();
+		}
+	}
+
+	// For four column layouts
+	&.four-col-1 {
+		@include zen-grid-item(3, 1);
+		@include zen-new-row();
+	}
+	&.four-col-2 {
+		@include zen-grid-item(3, 4);
+	}
+	&.four-col-3 {
+		@include zen-grid-item(3, 7);
+	}
+	&.four-col-4 {
+		@include zen-grid-item(3, 10);
+	}
+	@media only screen and (max-width: 1000px) {
+		&.four-col-1 {
+			@include zen-grid-item(6, 1);
+			@include zen-new-row();
+		}
+		&.four-col-2 {
+			@include zen-grid-item(6, 7);
+		}
+		&.four-col-3 {
+			@include zen-grid-item(6, 1);
+			@include zen-new-row();
+		}
+		&.four-col-4 {
+			@include zen-grid-item(6, 7);
+		}
+	}
+	@media only screen and (max-width: 600px) {
+		&.four-col-1 {
+			@include zen-grid-item(12, 1);
+			@include zen-new-row();
+		}
+		&.four-col-2 {
+			@include zen-grid-item(12, 1);
+			@include zen-new-row();
+		}
+		&.four-col-3 {
+			@include zen-grid-item(12, 1);
+			@include zen-new-row();
+		}
+		&.four-col-4 {
+			@include zen-grid-item(12, 1);
+			@include zen-new-row();
+		}
+	}
+
+	// Full page widths
+	&.full {
+		@include zen-grid-item(12, 1);
+	}
+	@media only screen and (max-width: 600px) {
+		> img {
+			float: right;
+			width: 40%;
+			margin: 2em .6em .6em 0;
+		}
+	}
+}
+
+.mobile-only {
+	display: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+	.mobile-only {
+		display: block !important;
+	}
+}
+
+// Title Description Text wraps to eliminate need for line breaks.
+.title-descriptions {
+	max-width: 60%;
+	@media only screen and (max-width: 800px) {
+		max-width: 80%;
+	}
+	@media only screen and (max-width: 500px) {
+		max-width: 100%;
+	}
+}
+
+.content_wrapper {
+	margin-bottom: 2em;
+}
+
+// Sets consistent max-width and margin for site content.
+//header, section, .language-menu
+.container {
+	// @include clearfix;
+	clear: both;
+	overflow: hidden;
+	padding: 0 1.8em;
+	max-width: 1480px;
+	margin: 0 auto;
+	@media only screen and (max-width: 1000px) {
+		padding: 0 .8em;
+	}
+	@media only screen and (max-width: 500px) {
+		padding: 0 .2em;
+	}
+}
+
+.bottom-margin {
+	// @include clearfix;
+	clear: both;
+	overflow: hidden;
+	margin-bottom: 2em;
+}
+
+// Begin resets: General positioning
+* {
+	// @include box-sizing(border-box);
+	box-sizing: border-box;
+	::selection {
+		background: $color-green;
+	}
+	::-moz-selection {
+		background: $color-green;
+	}
+}
+
+body {
+	// Typography
+	font-size: 20px;
+	font-weight: 400;
+	font-family: lato, Helvetica, sans-serif;
+	color: $color-font;
+	-webkit-font-smoothing: antialiased;
+	@media only screen and (max-width: 1280px) {
+		font-size: 18px;
+	}
+	@media only screen and (max-width: 1150px) {
+		font-size: 16px;
+	}
+
+	a {
+		// links
+		// @include transition(all 0.3s);
+		transition: all 0.3s;
+		text-decoration: none;
+		font-weight: 600;
+		color: $color_black;
+		&:hover {
+			//links on hover
+			// @include transition(all 0.3s);
+			transition: all 0.3s;
+			text-decoration: none;
+			font-weight: 600;
+			color: $color-green;
+		}
+	}
+
+	// Adds background to entire body element.
+	@include zen-grid-container;
+	background: #f5f5f5 url(../img/noise.png) repeat;
+	background-attachment: scroll;
+}
+
+// Navigation margins set to zero.
+nav ul {
+	margin: 0;
+}
+
+// End resets
+header,
+section {
+	//  @include clearfix;
+	clear: both;
+	overflow: hidden;
+}
+
+// Language switcher menu
+.topbar {
+	@media only screen and (max-width: 500px) {
+		display: none;
+	}
+	// @include clearfix;
+	clear: both;
+	overflow: hidden;
+	background-color: #111;
+	margin-bottom: 2em;
+	border-bottom: 1px solid #eee;
+	// Language switcher word styles
+	.language-menu {
+		text-align: right;
+		padding: 0 0 0.16em;
+		margin: 0;
+		li {
+			padding: 0;
+			margin: 0;
+			display: inline-block;
+			a {
+				// @include transition(all 0.3s);
+				transition: all 0.3s;
+				font-weight: 200;
+				color: #ccc;
+				text-transform: uppercase;
+				font-size: 0.666666em;
+				padding: 0 0 0.25em 0.5em;
+			}
+			a.active {
+				font-weight: 600;
+				color: #fff;
+			}
+			a:hover {
+				// @include single-text-shadow;
+				color: #fff;
+			}
+		}
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $color-titles;
+}
+
+img {
+	opacity: 0.94;
+}
+
+// Header formatting, can wrap in header if need be.
+header {
+	.main-logo {
+		// Our logo
+		@media only screen and (min-width: 481px) {
+			@include zen-grid-item-base();
+			@include zen-grid-item(6, 1);
+		}
+		@media only screen and (min-width: 481px) {
+			@include zen-grid-item(3, 1);
+		}
+		img {
+			width: 100%;
+			min-width: 200px;
+		}
+		@media only screen and (max-width: 600px) {
+			display: none;
+		}
+	}
+	// Our primary navigation menu.
+	.main-menu {
+		text-align: center;
+		margin-top: 1em;
+		padding: 0;
+		vertical-align: middle;
+		@include zen-grid-item(9, 4);
+		text-align: right;
+		li {
+			display: inline-block;
+			a {
+				text-transform: uppercase;
+				padding: 0.6em;
+				display: inline-block;
+				@media only screen and (min-width: 481px) {
+					padding-right: 0; // 0 0 0.6em;
+				}
+			}
+		}
+	}
+}
+
+// Intro page Slogan and Boxing gloves
+.main-slogan {
+	font-size: 4em;
+	text-align: center;
+	margin: 0;
+	padding: 0 0 0.5em;
+	//@media only
+	@media only screen and (max-width: 768px) {
+		margin-top: 0.8em;
+		font-size: 1.6em;
+	}
+}
+
+// "Once a warrior" and By-line Quotes Zen Grids parameters
+.warrior,
+.by-line {
+	@include zen-grid-item-base();
+	@include zen-grid-item(8, 3);
+	clear: both;
+	p {
+		// By-line special Typography parameters
+		margin: 0;
+		font-family: lato;
+		font-weight: 200;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 1.333333em;
+		@media only screen and (max-width: 768px) {
+			font-size: 1em;
+		}
+	}
+	.glove {
+		//  Gloves Images to Zen Grid
+		@media only screen and (min-width: 768px) {
+			// @include transition(all 150ms);
+			transition: all 150ms;
+		}
+		&.glove-left {
+			@include zen-grid-item(5, 2);
+			@media only screen and (min-width: 768px) {
+				// @include transform(translateX(-46px));
+				transform: translateX(-46px);
+			}
+			&.punch {
+				// @include transform(translateX(16px) rotate(5deg));
+				transform: translateX(16px) rotate(5deg);
+			}
+		}
+		&.glove-right {
+			@include zen-grid-item(5, 7);
+			@media only screen and (min-width: 768px) {
+				// @include transform(translateX(46px));
+				transform: translateX(46px);
+			}
+			&.punch {
+				// @include transform(translateX(-16px) rotate(-5deg));
+				transform: translateX(-16px) rotate(-5deg);
+			}
+		}
+	}
+}
+
+.button-wrapper {
+	@include zen-new-row;
+	padding-top: 0.8em;
+}
+
+.no-mobile {
+	@media only screen and (max-width: 600px) {
+		display: none;
+	}
+}
+
+.no-tablet {
+	@media only screen and (max-width: 1000px) {
+		display: none;
+	}
+}
+
+.on-mobile {
+	@media only screen and (min-width: 500px) {
+		display: none;
+	}
+}
+
+.only-tablet {
+	display: none;
+	@media only screen and (min-width: 600px) and (max-width: 1000px) {
+		display: block;
+	}
+}
+
+.big-button {
+	// @include transition(background-color 0.6s);
+	transition: background-color 0.6s;
+	// @include border-radius(3px);
+	border-radius: 3px;
+	background: #111 url(../img/noise-b.png) repeat;
+	color: #fff;
+	padding: 0.36em 0.58em 0.4em;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: inline-block;
+	opacity: 0.94;
+	&:hover {
+		// @include transition(background-color 0.6s);
+		transition: background-color 0.6s;
+		background-color: $color-green;
+		color: #fff;
+	}
+	&.on-mobile {
+		@media only screen and (min-width: 600px) {
+			display: none;
+		}
+	}
+}
+
+//Sass version of timetable.
+.dow-container {
+	// General Settings
+	$timeslots-per-hour: 4; // Time slots per hour.
+	$timeslot-height: 1em; // One timeslot = 15 mins
+	// Table Specifics
+	$tableStartTime: 15.00; // Time the table begins in decimals e.g. 15.75 = 15:45
+	$total-hours: 7; // Number of hours in the table.
+
+	// calculates the distance to top from start time
+	@mixin time-top($startTime) {
+		$step: $startTime - $tableStartTime;
+		$number: ($step % 1) / 0.6;
+		$full: round($step) + $number;
+		$top: $full * $timeslots-per-hour * $timeslot-height;
+		top: $top;
+	}
+
+	@mixin set-event-color($color) {
+		.text-surround {
+			border-color: lighten($color, 2%);
+			background-color: rgba($color, .92);
+		}
+	}
+
+	@media only screen and (max-width: 800px) {
+		font-size: 0.88em;
+	}
+
+	margin: 0 0 0 -0.5%;
+
+	.day {
+		float: left;
+	//	width: 15.6%; 
+	//bei 6 Tage in Woche
+	width: 19.0%;
+	//bei 5 Tage in Woche
+		margin: 0 0.5%;
+		@media only screen and (max-width: 500px) {
+			float: none;
+			width: 100%;
+			margin-bottom: 2em;
+			.slots {
+				display: none;
+			}
+		}
+		.day_header {
+			margin: 0 0 0.6em;
+			border-bottom: 2px solid $color-green;
+			.day-toggle {
+				float: right;
+			}
+		}
+		.slots {
+			position: relative;
+			@media only screen and (min-width: 500px) {
+				height: $total-hours * $timeslots-per-hour * $timeslot-height;
+			}
+			.course {
+				display: table;
+				background-repeat: repeat;
+				color: $color-white;
+				@media only screen and (min-width: 500px) {
+					position: absolute;
+				}
+				padding: 1px;
+				.text-surround {
+					display: table-cell;
+					vertical-align: middle;
+					border: 1px solid transparent;
+					font-size: 0.78em;
+					@media only screen and (max-width: 800px) {
+						font-size: 0.66em;
+					}
+					@media only screen and (max-width: 500px) {
+						font-size: 1.2em;
+					}
+					text-transform: uppercase;
+					text-align: center;
+					// @include border-radius(3px);
+					border-radius: 3px;
+					background-image: url(../img/noise.png);
+				}
+				// different colours for different sports
+				&.kick-boxing {
+					@include set-event-color($color-kickboxing);
+				}
+				&.boxing {
+					@include set-event-color($color-boxing);
+				}
+				&.boxing-juniors {
+					@include set-event-color($color-juniorboxing);
+				}
+				&.jiu-jitsu {
+					@include set-event-color($color-jj);
+				}
+				&.jiu-jitsu-kids {
+					@include set-event-color($color-jjkids);
+				}
+				&.judo {
+					@include set-event-color($color-judo);
+				}
+				&.selfdef {
+					@include set-event-color($color-selfdef);
+				}
+				&.thai {
+					@include set-event-color($color-thai);
+				}
+				&.taekwondo {
+					@include set-event-color($color-taekwondo);
+				}
+				&.taekwondo-kids {
+					@include set-event-color($color-taekwondo-kids);
+				}
+				// defines the position (top) of timeslot
+				@for $i from 0 through $timeslots-per-hour * $total-hours {
+					$step: $tableStartTime + $i / $timeslots-per-hour;
+					$number: ($step % 1) * 0.6;
+					$full: round($step) + $number;
+					&.t#{round($full * 100)} {
+						@include time-top($full);
+					}
+				}
+				// defines height of timeslots
+				@for $i from 1 through 12 {
+					&.s#{$i} {
+						height: $timeslot-height * $i;
+					}
+				}
+				// how many overlapping 1-3
+				width: 100%;
+				@media only screen and (min-width: 500px) {
+					&.e1 {
+						width: 100%;
+					}
+					&.e2 {
+						width: 50%;
+					}
+					&.e3 {
+						width: 33.333333%;
+					}
+				}
+				// on overlapping positioning
+				&.left {
+					left: 0;
+				}
+				&.center {
+					left: 33.333333%;
+				}
+				&.right {
+					right: 0;
+				}
+			}
+		}
+	}
+}
+
+// Styling for our footer.
+footer {
+	background-image: url(../img/map.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	border-top-color: #696969;
+	border-top-style: solid;
+	border-top-width: 1px;
+	// @include background-size(cover);
+	background-size: cover;
+	display: block;
+	color: #fff;
+
+	.overlay {
+		position: relative;
+		background: rgba(0, 0, 0, 0.68) url(../img/noise.png) repeat;
+		display: block;
+	}
+
+	// Contact styling.
+	.contact-info {
+		@include zen-new-row;
+		h2,
+		h3 {
+			color: #fff;
+		}
+		h3 {
+			margin: 0.6em 0;
+		}
+		a {
+			color: $color-green;
+		}
+		a:hover {
+			color: #696969;
+		}
+
+		.title-descriptions {
+			max-width: 80%;
+		}
+
+		// Email link styling.
+		.contact-email {
+			font-size: 2.2em;
+			color: $color-green;
+			@media only screen and (max-width: 500px) {
+				font-size: 1.4em;
+			}
+		}
+
+		// Phone number styling.
+		.contact-phone {
+			font-size: 1.4em;
+			color: $color-green;
+		}
+
+		// Facebook link styling.
+		.contact-fb {
+			margin: 0 0 0.8em;
+			display: block;
+			img {
+				// @include transition(all 0.3s);
+				transition: all 0.3s;
+				width: 1.8em;
+				height: 1.8em;
+				vertical-align: middle;
+				margin: -0.2em 0.4em 0 0;
+			}
+			&:hover {
+				img {
+					// @include transition(all 0.3s);
+					transition: all 0.3s;
+					opacity: .4;
+				}
+			}
+		}
+
+		// Contact address styling.
+		.contact-address {
+			font-weight: 200;
+		}
+	}
+	// Partner link styling.
+	.contact-info .partner-link {
+		display: block;
+		color: $color-white;
+		font-weight: 200;
+		float: left;
+		margin: 0 0 0.4em;
+		width: 33%;
+		@media only screen and (max-width: 1000px) {
+			width: 50%;
+		}
+		img {
+			// @include transition(all 0.3s);
+			transition: all 0.3s;
+			max-width: 80%;
+			max-height: 2.6em;
+		}
+		&:hover {
+			img {
+				// @include transition(all 0.3s);
+				transition: all 0.3s;
+				opacity: .4;
+			}
+		}
+	}
+}
+
+.credit-line {
+	text-align: center;
+	font-size: 0.72em;
+	.credit-link {
+		font-weight: 400;
+		color: #fff;
+		&:hover {
+			opacity: 0.68;
+		}
+	}
+	.copy-link {
+		// float: left;
+		a {
+			color: #fff;
+			font-weight: 400;
+			&:hover {
+				opacity: 0.68;
+			}
+		}
+	}
+}
