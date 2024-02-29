@@ -15,6 +15,8 @@ de:
   subsection_judo: "Judo"
   subsection_brazilianjiujitsu: "Brazilian Jiu Jitsu"
   subsection_securekids: "Sicherheitstraining für Kinder und Jugendliche"
+  subsection_danilo_kurs: "Danilo Lajolo L.K.F.S. Workshop"
+
 
   subdesc_boxing: "Eine Disziplin für Männer, Frauen und Jungendliche ab 15 Jahren, die sich der Welt des Boxens nähern wollen. Ganzheitliche, athletische Vorbereitung mit dem Ziel, die Fähigkeiten Ausdauer, Schnelligkeit, Kraft und Koordination zu verbessern. Erlernen der Grundtechniken des Boxens, Partnerübungen, Einsatz von tech. Hilfsmitteln, Functionaltraining und Sparring."
   subdesc_kickboxing: "Als Basis gelten die aus dem Karate übernommenen Beintechniken und das klassische Boxen. Für jene die Ausdauer-, Kraft- und Reaktionstraining in Kombination der Beine und Arme erlernen wollen. Unsere Trainingseinheiten beinhalten Technikübungen, Zirkeltraining, Dehnungsübungen sowie Partnerübungen und Trainingskampf."
@@ -22,6 +24,8 @@ de:
   subdesc_brazilianjiujitsu: "Das Brasilianische Jiu Jitsu oder auch Gracie Jiu Jitsu ist ein Kampfsport- und Selbstverteidigungssystem, das den Schwerpunkt auf Bodenkampf legt, wobei im Training zusätzlich Wurftechniken aus dem Stand unterrichtet werden. Seit den Neunziger Jahren gilt das BJJ als das prägende im Nahkampf eingesetzte System im MMA und UFC- Wettkampfgeschehen."
   subdesc_securekids: "Selbstbehauptung, Stärkung der Sozialkompetenzen und Selbstverteidigungstechniken sollen erlernt werden. Gewaltprävention, Zivilcourage fördern, Verhinderung von Eskalationen, Warn- und Körpersignale erkennen. Die Stärkung der Persönlichkeit, unter Vermeidung von Aggression und Gewalt in Vermittlung von Inhalten die ein Zusammenleben wertvoll machen."
   subdesc_kick_thai: "Muay Thai ist Thailands Nationalsport und eine der ältesten Kampfsportarten der Welt, bei der neben Bein- und Boxtechniken auch Knie und Ellenbogen zum Einsatz kommen. Es ist außerdem erlaubt, im Clinch zu bleiben, dabei Kniestöße anzubringen und/oder den Gegner zu Boden zu bringen."
+  subdesc_danilo_kurs: "Exteandable Baton (am Samstag) & Knife (am Sonntag), am 09.03.2024 und am 10.03.2024 von 09.30 bis 13.00 @ Fighting Club Meran/o "
+
 
   button_signup: "Anmelden"
   signupmail_boxing: "fightingclub2006@gmail.com"
@@ -30,6 +34,7 @@ de:
   signupmail_bjj: "patrickb31@outlook.it"
   signupmail_securekids: "lukasbernhard@rolmail.net"
   signupmail_kick_thai: "fightingclub2006@gmail.com"
+  signupmail_danilo_kurs: "fightingclub2006@gmail.com"
 
 
 
