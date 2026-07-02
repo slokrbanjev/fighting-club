@@ -511,9 +511,9 @@ header {
 
 	.day {
 		float: left;
-		width: 15.6%; 
+	//width: 15.6%;
 	//bei 6 Tage in Woche
-	//width: 19.0%;
+		width: 19.0%;
 	//bei 5 Tage in Woche
 		margin: 0 0.5%;
 		@media only screen and (max-width: 500px) {
