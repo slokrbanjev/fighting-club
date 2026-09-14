@@ -511,9 +511,9 @@ header {
 
 	.day {
 		float: left;
-	//width: 15.6%;
+		width: 15.6%;
 	//bei 6 Tage in Woche
-		width: 19.0%;
+	//width: 19.0%;
 	//bei 5 Tage in Woche
 		margin: 0 0.5%;
 		@media only screen and (max-width: 500px) {
@@ -599,7 +599,8 @@ header {
 				@for $i from 0 through $timeslots-per-hour * $total-hours {
 					$step: $tableStartTime + $i / $timeslots-per-hour;
 					$number: ($step % 1) * 0.6;
-					$full: round($step) + $number;
+					// floor, nicht round: sonst fehlen die x.30/x.45-Klassen der ersten Stunde (t1530, t1545)
+					$full: floor($step) + $number;
 					&.t#{round($full * 100)} {
 						@include time-top($full);
 					}
