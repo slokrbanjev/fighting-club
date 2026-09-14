@@ -1,15 +1,9 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem "zen-grids", '2.0.3'
+# Aktuelles Ruby (Homebrew: `brew install ruby`), nicht mehr das System-Ruby 2.6 von macOS.
+ruby '>= 3.4'
 
-gem "middleman", '4.4.0'
-# gem "middleman-compass", '4.0.1'
-
-gem "middleman-livereload", '3.4.6'
-
-gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
-gem 'middleman-sprockets', '4.1.1'
-
-gem 'execjs'
+gem 'middleman', '~> 4.6'
+gem 'middleman-livereload', '~> 3.5'
+gem 'middleman-deploy-ghpages', path: 'lib/middleman-deploy-ghpages'
+gem 'zen-grids', '~> 2.0'
