@@ -1,3 +1,4 @@
+@import 'fonts';
 @import 'normalize';
 // @import 'compass';
 @import 'helper-classes';
@@ -316,6 +317,24 @@ h6 {
 	color: $color-titles;
 }
 
+// Untertitel sind semantisch h3 (nach den h2-Sektionen), optisch wie die früheren h4.
+.sub-title {
+	font-size: 1.1em;
+	margin: 1.33em 0;
+}
+
+.inline-link {
+	text-decoration: underline;
+}
+
+// Seitentitel auf Unterseiten (h1), optisch wie die h2-Sektionsüberschriften.
+.page-title {
+	font-size: 1.666em;
+	margin: 0.83em 0;
+	line-height: normal;
+	letter-spacing: normal;
+}
+
 img {
 	opacity: 0.94;
 }
@@ -441,7 +460,7 @@ header {
 }
 
 .on-mobile {
-	@media only screen and (min-width: 500px) {
+	@media only screen and (min-width: 501px) {
 		display: none;
 	}
 }
@@ -511,11 +530,24 @@ header {
 
 	.day {
 		float: left;
-		width: 15.6%;
-	//bei 6 Tage in Woche
-	//width: 19.0%;
-	//bei 5 Tage in Woche
-		margin: 0 0.5%;
+		// Unter 1480px: zwei Reihen mit je 3 Tagen (Mo-Mi / Do-Sa), damit auch drei
+		// parallele Kurse (Di/Do 20.00) lesbar nebeneinander passen.
+		width: 32.333%;
+		margin: 0 0.5% 2em;
+		&:nth-child(3n + 1) {
+			clear: left;
+		}
+		&:nth-last-child(-n + 3) {
+			margin-bottom: 0;
+		}
+		// Ab 1480px (= max-width des Containers): alle 6 Tage in einer Reihe.
+		@media only screen and (min-width: 1480px) {
+			width: 15.6%;
+			margin-bottom: 0;
+			&:nth-child(3n + 1) {
+				clear: none;
+			}
+		}
 		@media only screen and (max-width: 500px) {
 			float: none;
 			width: 100%;
@@ -525,6 +557,7 @@ header {
 			}
 		}
 		.day_header {
+			font-size: 1.1em;
 			margin: 0 0 0.6em;
 			border-bottom: 2px solid $color-green;
 			.day-toggle {
@@ -533,14 +566,14 @@ header {
 		}
 		.slots {
 			position: relative;
-			@media only screen and (min-width: 500px) {
+			@media only screen and (min-width: 501px) {
 				height: $total-hours * $timeslots-per-hour * $timeslot-height;
 			}
 			.course {
 				display: table;
 				background-repeat: repeat;
 				color: $color-white;
-				@media only screen and (min-width: 500px) {
+				@media only screen and (min-width: 501px) {
 					position: absolute;
 				}
 				padding: 1px;
@@ -613,7 +646,7 @@ header {
 				}
 				// how many overlapping 1-3
 				width: 100%;
-				@media only screen and (min-width: 500px) {
+				@media only screen and (min-width: 501px) {
 					&.e1 {
 						width: 100%;
 					}

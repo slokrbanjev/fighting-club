@@ -1,25 +1,25 @@
-//= require "assets/js/vendor/jquery.meanmenu.min.js"
-//= require "assets/js/vendor/slippry.min.js"
+// Fremdbibliotheken (jQuery, meanMenu, slippry) werden im Layout vor dieser Datei eingebunden.
 
-$(document).ready(function() {
+$(function() {
   $(".main-menu").meanmenu({
     // onePage: true,
-    meanScreenWidth: 600
+    meanScreenWidth: 600,
+    // drei Balken; die Vorgabe "<span />" wird von jQuery 3 nicht mehr als leeres Element gelesen
+    meanMenuOpen: "<span></span><span></span><span></span>"
   });
-  $(".main-menu a, .smooth-link, .mean-nav a:not(.mean-expand)").click(function(
-    e
-  ) {
-    var target = $(this).attr("href");
-    if ($(this).hasClass("anchor-link")) {
-      target = "#" + target.split("#")[1];
+  // Sanftes Scrollen zu Ankern auf derselben Seite; alle anderen Links (andere Seite,
+  // Sprachumschalter "#!") verhalten sich normal.
+  $(".main-menu a, .smooth-link, .mean-nav a:not(.mean-expand)").on("click", function() {
+    var href = $(this).attr("href") || "";
+    var hash = href.indexOf("#") >= 0 ? href.substring(href.indexOf("#")) : "";
+    if (hash.length < 2 || !/^#[A-Za-z][\w-]*$/.test(hash)) {
+      return;
     }
-    $("body, html").animate(
-      {
-        scrollTop: $(target).offset().top
-      },
-      600
-    );
-    // return false;
+    var $target = $(hash);
+    if (!$target.length) {
+      return;
+    }
+    $("body, html").animate({ scrollTop: $target.offset().top }, 600);
   });
   if ($(".glove").css("transitionDuration") !== "0s") {
     $(document).on("scroll", function() {
@@ -31,7 +31,7 @@ $(document).ready(function() {
     });
   }
   if ($(".day-toggle").css("display") !== "none") {
-    $(".day_header").click(function() {
+    $(".day_header").on("click", function() {
       $(".slots", $(this).closest(".day")).slideToggle();
       if ($(".day-toggle", $(this).closest(".day")).text() === "⬇︎") {
         $(".day-toggle", $(this).closest(".day")).text("⬆︎");
